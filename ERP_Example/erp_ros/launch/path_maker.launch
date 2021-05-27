@@ -1,0 +1,5 @@
+<launch>
+	<!-- args = "(path) (kcity)" -->
+	<node pkg="erp_ros" type="path_maker.py" name="maker" args="path kcity" output="screen"/>
+ 
+</launch>

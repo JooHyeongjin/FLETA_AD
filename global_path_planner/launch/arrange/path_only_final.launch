@@ -1,0 +1,19 @@
+<launch>
+ <group ns="global_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/global_map.yaml" >
+  </node>
+ </group>
+ <group ns="region_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/region_map.yaml" >
+  </node>
+ </group>
+ <group ns="plain_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/plain_map.yaml" >
+  </node>
+ </group>
+  <node name="gps_path_only" pkg="global_path_planner"  type="gps_path_only" respawn="true"/>
+  <node name="globa_path_publisher" pkg="global_path_planner" type="globa_path_publisher.py" args="final_path" respawn="true" />
+  <node pkg="tf" type="static_transform_publisher" name="tf_static_pub" args="1.35 0 0 0 0 0 1 novatel velodyne 100" />
+  <node name="region_state" pkg="global_path_planner"  type="region_state" respawn="true"/>
+  <node name="zoom_state" pkg="global_path_planner"  type="zoom_state" respawn="true"/>
+</launch>

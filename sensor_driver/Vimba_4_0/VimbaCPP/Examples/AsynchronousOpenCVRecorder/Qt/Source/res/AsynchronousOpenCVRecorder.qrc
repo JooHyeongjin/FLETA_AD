@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/AsynchronousOpenCVRecorder">
+        <file>AsynchronousOpenCVRecorder.png</file>
+    </qresource>
+</RCC>

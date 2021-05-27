@@ -1,0 +1,5 @@
+<launch>
+ <node name="region_state" pkg="global_path_planner"  type="state_decision1" respawn="true" args="final" />
+ <node name="traffic_state" pkg="global_path_planner"  type="traffic_state" respawn="true"/>
+  <node name="zoom_state" pkg="global_path_planner"  type="zoom_state" respawn="true"/>
+</launch>

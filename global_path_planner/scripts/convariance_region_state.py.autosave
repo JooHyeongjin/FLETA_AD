@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+import rospy
+from nav_msgs.msg import OccupancyGrid
+from sensor_msgs.msg import PointCloud
+from nav_msgs.msg import Odometry
+import tf
+import math
+
+region_map = OccupancyGrid()
+
+def callback(data):
+    global region_map
+    
+
+def listener():
+    global region_map
+    rospy.init_node('listener', anonymous=True)
+    rospy.Subscriber("/gps_utm_odom", Odometry, callback)
+    # spin() simply keeps python from exiting until this node is stopped
+    rospy.wait_for_service('/region_map/static_map')
+    try:
+        srv = rospy.Service('/region_map/static_map',GetMap)
+        region_map = GetMap()
+    except rospy.ServiceException, e:
+        print(str(e))
+    rospy.spin()
+
+if __name__ == '__main__':
+    listener()

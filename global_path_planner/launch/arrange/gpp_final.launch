@@ -1,0 +1,19 @@
+<launch>
+ <group ns="plain_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/plain_map.yaml" >
+  </node>
+ </group>
+ <group ns="region_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/region_final.yaml" >
+  </node>
+ </group>
+<group ns="global_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/global_map.yaml" >
+  </node>
+ </group>
+  <node name="globa_path_publisher" pkg="global_path_planner" type="globa_path_publisher.py" args="wnju3" respawn="true" />
+  <node name="local_costmap" pkg="global_path_planner" type="local_costmap_190825_in_kcity" respawn="true" output="screen" args="wnju3" />
+  <node name="region_state" pkg="global_path_planner"  type="region_state" respawn="true" args="final" />
+  <node name="traffic_state" pkg="global_path_planner"  type="traffic_state" respawn="true"/>
+  <node name="zoom_state" pkg="global_path_planner"  type="zoom_state" respawn="true"/>
+</launch>

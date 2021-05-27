@@ -1,0 +1,14 @@
+<launch>
+ <group ns="global_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/global_map.yaml" >
+  </node>
+ </group>
+ <group ns="plain_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/plain_map.yaml" >
+  </node>
+ </group>
+ <group ns="region_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/region_final.yaml" >
+ </node>
+</group>
+</launch>

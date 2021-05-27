@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -Wfloat-conversion -O3 -DNDEBUG  -rdynamic CMakeFiles/example-TransverseMercatorExact.dir/example-TransverseMercatorExact.cpp.o  -o example-TransverseMercatorExact -Wl,-rpath,/home/a/catkin_ws/src/GeographicLib-1.50.1/BUILD/src ../src/libGeographic.so.19.0.1 

@@ -1,0 +1,8 @@
+<launch>
+  <node name="globa_path_publisher" pkg="global_path_planner" type="globa_path_publisher.py" args="final_path" respawn="true" />
+  <node name="local_costmap" pkg="global_path_planner" type="local_path_made" respawn="true" output="screen" args="wnju1" />
+  <node name="region_state" pkg="global_path_planner"  type="state_decision1" respawn="true" args="final" />
+  <node name="traffic_state" pkg="global_path_planner"  type="traffic_state" respawn="true"/>
+  <node name="zoom_state" pkg="global_path_planner"  type="zoom_state" respawn="true"/>
+
+</launch>

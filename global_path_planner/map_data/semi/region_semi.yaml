@@ -1,0 +1,6 @@
+image: region_semi.png
+resolution: 0.1
+origin: [-182.4, -626.0, 0.0]
+occupied_thresh: 0.9
+free_thresh: 0.1
+negate: 0

@@ -1,0 +1,7 @@
+<launch>
+
+<include file="$(find darknet_ros)/launch/yolo_v3.launch">
+  </include>
+  <node pkg="image_size_cutter"	name="image_size_cutter"   type="image_size_cutter" respawn="true" />
+  <node name="preprocess" pkg="preprocess"  type="preprocess" respawn="true" />
+</launch>

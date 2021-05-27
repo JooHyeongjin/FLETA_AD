@@ -1,0 +1,16 @@
+<launch>
+
+<include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
+  </include>
+<include file="$(find novatel_oem7_driver)/launch/oem7_tty.launch">
+  </include>
+<include file="$(find darknet_ros)/launch/yolo_v3.launch">
+  </include>
+<include file="$(find avt_vimba_camera)/launch/mono_camera.launch">
+  </include>
+  <node pkg="Object_detection"	name="Object_detection"   type="Object_detection" />
+  <node pkg="image_size_cutter"	name="image_size_cutter"   type="image_size_cutter" respawn="true" />
+  <node name="tr_processing" pkg="tr_processing"  type="tr_processing" respawn="true" />
+  <node name="7_fix2_utm_heading_w" pkg="kcity_planning"  type="7_fix2_utm_heading_w.py" respawn="true" />
+  <node pkg="tf" type="static_transform_publisher" name="tf_static_pub" args="1.35 0 0 0 0 0 1 novatel velodyne 100" />
+</launch>

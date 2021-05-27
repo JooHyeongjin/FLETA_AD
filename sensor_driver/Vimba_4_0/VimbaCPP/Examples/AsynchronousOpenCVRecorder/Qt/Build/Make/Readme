@@ -1,0 +1,9 @@
+build Linux
+requirements:
+	Installed QT 4
+	OpenCV3
+		- Get libopencv-dev package or download from https://github.com/opencv/opencv/archive/3.0.0.tar.gz
+		- Create OpenCV makefile using CMake 
+		- Build OpenCV by calling 'make' or 'make -j' for multithreaded build
+		- Install OpenCV by calling 'sudo make install'
+		For in-depth instructions please refer to: https://docs.opencv.org/3.0.0/d7/d9f/tutorial_linux_install.html

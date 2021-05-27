@@ -1,0 +1,21 @@
+<launch>
+<include file="$(find avt_vimba_camera)/launch/mono_camera.launch">
+  </include>
+<include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
+  </include>
+<include file="$(find novatel_gps_driver)/launch/tester_for_usb.launch">
+  </include>
+<include file="$(find darknet_ros)/launch/yolo_v3.launch">
+  </include>
+  <node name="tr_processing" pkg="tr_processing"  type="tr_processing" respawn="true" />
+  <node name="novatel_node" pkg="irlgps"  type="novatel_node" respawn="true" />
+  <node name="SC_Control" pkg="SC_Control"  type="SC_Control" respawn="true" />
+  <node name="Sim_path_tracking" pkg="Sim_path_tracking"  type="Sim_path_tracking" respawn="true" /> 
+  <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d /home/a/selfcar_ws/rviz_selfcar.rviz"/>
+  <node pkg="tf" type="static_transform_publisher" name="tf_static_pub" args="1.35 0 0 0 0 0 1 novatel velodyne 100" />
+ <group ns="global_map">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find global_path_planner)/map_data/global_map.yaml" >
+  </node>
+ </group>
+</launch>

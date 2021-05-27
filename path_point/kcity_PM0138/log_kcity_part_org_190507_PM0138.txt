@@ -1,0 +1,37 @@
+---------- [USER ARGS] ----------
+path name         = C:\Users\user\workspace\corelib_map_data_parser\shape_parser_lib\test_data\kcity_190430\HDMap_UTM52N\
+relative location = False
+swap_xy           = False
+---------------------------------
+Successfully opened a shp file
+Successfully opened a shx file
+Successfully opened a shp file
+Successfully opened a shx file
+Successfully opened a shp file
+Successfully opened a shx file
+Successfully opened a shp file
+Successfully opened a shx file
+Successfully opened a shp file
+Successfully opened a shx file
+Successfully opened a shp file
+Successfully opened a shx file
+Successfully opened a shp file
+Successfully opened a shx file
+Successfully opened a shp file
+Successfully opened a shx file
+Successfully opened a shp file
+Successfully opened a shx file
+Successfully opened a shp file
+Successfully opened a shx file
+Unable to open C:\Users\user\workspace\corelib_map_data_parser\shape_parser_lib\test_data\kcity_190430\HDMap_UTM52N\C2_KM_POST.shp or C:\Users\user\workspace\corelib_map_data_parser\shape_parser_lib\test_data\kcity_190430\HDMap_UTM52N\C2_KM_POST.SHP.
+Successfully opened a shp file
+Successfully opened a shx file
+[INFO] Map data is loaded successfully
+[INFO] Found  351 numbers of A1LANE_CenterLine object(s).
+[INFO] Found  186 numbers of A1LANE_NormalLane object(s).
+[INFO] Found  560 numbers of A1LANE_RoadEdge object(s).
+[INFO] Found  465 numbers of A3LINK_PathCenter object(s).
+-------------------- Result Summary --------------------
+[A1_LANE] Total Line Num = 2010, Centerline = 0351, Normal Lane = 0186, Road Edge = 0560
+[A3_LINK] Total Line Num = 0465, Parsed Num = 0465
+계속하려면 아무 키나 누르십시오 . . .

@@ -1,0 +1,12 @@
+<launch>
+ <group ns="camera1">
+  <node name="traffic_cam" pkg="traffic_cam" type="traffic_cam_node" output="screen" respawn="true">
+    <param name="video_device" value="/dev/video1" />
+    <param name="image_width" value="1920" />
+    <param name="image_height" value="1080" />
+    <param name="pixel_format" value="mjpeg" />
+    <param name="camera_frame_id" value="yuyv" />
+    <param name="io_method" value="mmap"/>
+  </node>
+ </group>
+</launch>
